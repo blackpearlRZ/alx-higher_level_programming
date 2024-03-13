@@ -1,6 +1,3 @@
 #!/usr/bin/python3
-alph = 97
-
-while alph < 123:
-    print("{:c}".format(alph), end="")
-    alph += 1
+for i in range(97, 123):
+    print('{}'.format(chr(i)), end="")
