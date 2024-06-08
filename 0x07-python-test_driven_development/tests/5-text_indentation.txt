@@ -1,0 +1,47 @@
+Tests for the text_indentation function in the 5-text_indentation module
+========================================================================
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hello:World?From.Mars")
+Hello:
+<BLANKLINE>
+World?
+<BLANKLINE>
+From.
+<BLANKLINE>
+Mars
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+	...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation("string", "gnirts")
+Traceback (most recent call last):
+	...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+>>> text_indentation(98)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation(["string", 98])
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation("")
+
+>>> text_indentation(chaimae aafif")
+chaimae aafif
+
+>>> text_indentation("chaimae:aafif")
+chaimae:
+<BLANKLINE>
+aafif

@@ -1,0 +1,74 @@
+Tests for the "matrix_divided" function in the "2-matrix_divided" module
+========================================================================
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([[2, 4, 6], [6, 4, 2]], 2)
+[[1.0, 2.0, 3.0], [3.0, 2.0, 1.0]]
+
+>>> matrix_divided([[2, 4], [4, 2]], 0)
+Traceback (most recent call last):
+	...
+ZeroDivisionError: division by zero
+
+>>> matrix_divided([[2, 4], [4, 2]], "str")
+Traceback (most recent call last):
+	...
+TypeError: div must be an integer
+
+>>> matrix_divided([[1, 2, 3], [1, 2]], 1)
+Traceback (most recent call last):
+	...
+TypeError: Each row of the matrix must have the same size
+
+>>> for a in [[1, 2], [2, 1]]:
+...     for b in a:
+...             print(type(b))
+<class 'int'>
+<class 'int'>
+<class 'int'>
+<class 'int'>
+
+>>> for a in [[1, 2], [2.1, 1.2]]:
+...     for b in a:
+...             print(type(b))
+<class 'int'>
+<class 'int'>
+<class 'float'>
+<class 'float'>
+
+>>> matrix_divided([[1, 2], "str"], 1)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([[1, 2], [2.1, 1.2]], float('nan'))
+[[nan, nan], [nan, nan]]
+
+>>> matrix_divided([[float('inf'), 2], [2, 1]], float('inf'))
+[[nan, 0.0], [0.0, 0.0]]
+
+>>> matrix_divided([[4, 2], [2, 4]], 3)
+[[1.33, 0.67], [0.67, 1.33]]
+
+>>> matrix_divided()
+Traceback (most recent call last):
+	...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+>>> matrix_divided([[1, 2], [2, 1]])
+Traceback (most recent call last):
+	...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+>>> matrix_divided([[1, 2], [2, 1]], 2, 1)
+Traceback (most recent call last):
+	...
+TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
+>>> type(matrix_divided([[1, 2], [2, 1]], 1))
+<class 'list'>
+
+>>> matrix_divided(None, 1)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
