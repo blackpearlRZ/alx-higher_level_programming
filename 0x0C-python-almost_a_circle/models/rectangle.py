@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
 """
-This module provides the Rectangle class which serves
-as a subclass of Base.
+This module provides the Rectangle class which
+serves as a subclass of Base.
 
-The Rectangle class manages attributes related to
-rectangle dimensions and coordinates.
+The Rectangle class manages attributes related
+to rectangle dimensions and coordinates.
 """
 
 from models.base import Base
@@ -48,7 +48,7 @@ class Rectangle(Base):
             TypeError: If width is not an integer.
             ValueError: If width is <= 0.
         '''
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -70,7 +70,7 @@ class Rectangle(Base):
             TypeError: If height is not an integer.
             ValueError: If height is <= 0.
         '''
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -92,7 +92,7 @@ class Rectangle(Base):
             TypeError: If x is not an integer.
             ValueError: If x is < 0.
         '''
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -114,7 +114,7 @@ class Rectangle(Base):
             TypeError: If y is not an integer.
             ValueError: If y is < 0.
         '''
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
