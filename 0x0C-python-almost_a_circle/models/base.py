@@ -1,9 +1,13 @@
 #!/usr/bin/python3
 '''
-This module provides the Base class which serves as the base for all other classes in this project.
+This module provides the Base class which serves as the base for all
+other classes in this project.
 
-The Base class manages the id attribute to ensure unique identification of each instance.
+The Base class manages the id attribute to ensure unique
+identification of each instance.
 '''
+
+
 class Base:
     '''The base class for all other classes
         It's purpose is to manage ID attribute
@@ -22,4 +26,3 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-
