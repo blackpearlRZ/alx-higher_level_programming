@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 
 """
-This module provides the Rectangle class which serves as a subclass of Base.
+This module provides the Rectangle class which serves
+as a subclass of Base.
 
-The Rectangle class manages attributes related to rectangle dimensions and coordinates.
+The Rectangle class manages attributes related to
+rectangle dimensions and coordinates.
 """
 
 from models.base import Base
@@ -117,4 +119,3 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-
