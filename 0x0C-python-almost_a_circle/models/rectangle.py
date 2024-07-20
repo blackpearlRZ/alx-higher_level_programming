@@ -172,9 +172,9 @@ class Rectangle(Base):
                 elif k == "y":
                     self.y = v
 
-
     def __str__(self):
-        '''final one ??'''
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                self.x, self.y,
-                self.width, self.height)
+        '''Return the string representation of the rectangle.'''
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height
+        )
+
